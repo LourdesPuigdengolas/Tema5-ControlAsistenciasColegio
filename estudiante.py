@@ -1,21 +1,21 @@
 
 class Estudiante:
-    __id: int
+    __idEstud: int
     __nombre: str
-    __apellido: str
+    __apellidEstudo: str
     __dni: str
 
-    def __init__(self, id, nombre, apellido, dni):
-        self.__id = id
+    def __init__(self, idEstud, nombre, apellidEstudo, dni):
+        self.__idEstud = idEstud
         self.__nombre = nombre
-        self.__apellido = apellido
+        self.__apellidoEstud = apellidoEstud
         self.__dni = dni
     
-    def getId(self):
-        return self.__id
+    def getIdEstud(self):
+        return self.__idEstud
     def getNombre(self):
         return self.__nombre
-    def getApellido(self):
-        return self.__apellido
+    def getApellidoEstud(self):
+        return self.__apellidoEstud
     def getDni(self):
         return self.__dni

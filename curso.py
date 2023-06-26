@@ -1,18 +1,17 @@
 
 class Curso:
-    __id: int
+    __idCurso: int
     __anio: int
     __division: str
 
-    def __init__(self, id, anio, division):
-        self.__id = id
+    def __init__(self, idCurso, anio, division):
+        self.__idCurso = idCurso
         self.__anio = anio
         self.__division = division
     
-    def getId(self):
-        return self.__id
+    def getIdCurso(self):
+        return self.__idCurso
     def getAnio(self):
         return self.__anio
     def getDivision(self):
         return self.__division
-        

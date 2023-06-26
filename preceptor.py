@@ -1,26 +1,26 @@
+from curso import Curso
 
 class Preceptor:
-    __id: int
+    __idPrece: int
     __nombre: str
-    __apellido: str
+    __apellidoPrece: str
     __correo: str
     __clave: str
 
-    def __init__(self, id, nombre, apellido, correo, clave):
-        self.__id = id
+    def __init__(self, idPrece, nombre, apellidoPrece, correo, clave):
+        self.__idPrece = idPrece
         self.__nombre = nombre
-        self.__apellido = apellido
+        self.__apellidoPrece = apellidoPrece
         self.__correo = correo
         self.__clave = clave
     
-    def getId(self):
-        return self.__id
+    def getidPrece(self):
+        return self.__idPrece
     def getNombre(self):
         return self.__nombre
-    def getApellido(self):
-        return self.__apellido
+    def getApellidoPrece(self):
+        return self.__apellidoPrece
     def getCorreo(self):
         return self.__correo
     def getClave(self):
         return self.__clave
-        
