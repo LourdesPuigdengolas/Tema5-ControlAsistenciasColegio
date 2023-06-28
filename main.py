@@ -25,6 +25,8 @@ def preceptor():
     else:
         return redirect('/')
 
+
+
 @app.route('/logout')
 def logout():
     session.pop('email', None) #pop me elimina la clave email del diccionario session
