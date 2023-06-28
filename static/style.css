@@ -1,62 +1,55 @@
-body {
-    background-color: #bd9384;
+* {
+    box-sizing: border-box;
+   }
+   body {
+	margin: 10px;
+	padding: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   }
+   header {
+    background-color: #3c2525;
+    padding: 20px;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+   }
+   h1{
+	font-size: 40px;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	text-align: center;
 
+   }
+   h2{
+	font-size: 24px;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+	}
+	h3{
+	font-size: 18px;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: left;
+	margin-left: 70px ;
+	}
+section{
+	background-color: #f1f1f1;
 }
+   form {
+    padding-left: 90px;
+    width: 100%;
+    background-color: #f1f1f1;
+    height: 270px;
+	font-size: 16px;
 
-
-#contenedor {
-	width: 1024px;
-	height: 768px;
-	margin: auto;
-
-}
-
-
-
-header {
-	width:100%;
-	height: 100px;
-	background-color: #2b2827;
-	margin-bottom: 20px;
-	margin-left: 5px;
-}
-
-#tierra-media img {
-   width:100%;
-	height: 100px;
-
-}
-
-#carouselExampleIndicators {
-	margin-left: 10px;
-	margin-right: 10px;
-
-}
- h1 {
- 	color: #fff;
- 	text-align: center;
- 
- 	font-size: 450%;
- }
-
-h2 {
-	font-family: 'Montserrat', sans-serif;
-    color: #210336;
-	font-size: 220%;
-	margin-top: 60px;
-	margin-bottom: 70px;
-	margin-left: 5px;
-	text-shadow: 2px 2px 2px #bfb2ac; 
-}
-
-h3 {
-	font-family: 'Montserrat', sans-serif;
-    color: #7e5151;
-    font-size: 120%
-}
-.mb-3{
-	font-family: 'Montserrat', sans-serif;
-    color: #312d2d;
-	font-size: 160%;
-	
-}
+   } 
+   footer {
+    background-color: #3c2525;
+    padding: 16px;
+    text-align: center;
+    color: white;
+	float: bottom;
+   }
+   @media (max-width: 600px) {
+    nav, article { width: 100%;
+        height: auto;
+        }
+       }    
