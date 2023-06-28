@@ -1,24 +1,36 @@
+from run import db
 
-class Asistencia:
-    __fecha: str
-    __codigoClase: int
-    __asistio: bool
-    __justificacion: str
+class Asistencia(db.Model):
+    __tablename__ = 'asistencia'
 
-    def __init__(self, fecha, codigoClase, asistio, justificacion):
-        self.__fecha = fecha
-        self.__codigoClase = codigoClase
-        self.__asistio = asistio
-        self.__justificacion = justificacion
+    id: int = db.Column(db.Integer, primary_key=True)
+    fecha: str = db.Column(db.String(80), nullable=False)
+    codigoclase: int = db.Column(db.Integer, nullable=False)
+    asistio: bool = db.Column(db.Boolean, nullable=False)
+    justificacion: str = db.Column(db.String(80), nullable=False)
+    idEstudiante: int = db.Column(db.Integer, nullable=False)
 
+    def __init__(self, fecha, codigoClase, asistio, justificacion, idEstudiante):
+        self.fecha = fecha
+        self.codigoclase = codigoClase
+        self.asistio = asistio
+        self.justificacion = justificacion
+        self.idEstudiante = idEstudiante
+
+    def getId(self):
+        return self.id
+    
     def getFecha(self):
-        return self.__fecha
+        return self.fecha
 
     def getCodigoClase(self):
-        return self.__codigoClase
+        return self.codigoclase
     
     def getAsistio(self):
-        return self.__asistio
+        return self.asistio
     
     def getJustificacion(self):
-        return self.__justificacion
+        return self.justificacion
+    
+    def getIdEstudiante(self):
+        return self.idEstudiante

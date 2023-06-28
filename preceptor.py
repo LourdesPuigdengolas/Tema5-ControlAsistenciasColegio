@@ -1,26 +1,27 @@
-from curso import Curso
+from run import db
 
-class Preceptor:
-    __idPrece: int
-    __nombre: str
-    __apellidoPrece: str
-    __correo: str
-    __clave: str
+class Preceptor(db.Model):
+    __tablename__ = 'preceptor'
 
-    def __init__(self, idPrece, nombre, apellidoPrece, correo, clave):
-        self.__idPrece = idPrece
-        self.__nombre = nombre
-        self.__apellidoPrece = apellidoPrece
-        self.__correo = correo
-        self.__clave = clave
+    id = db.Column(db.Integer, primary_key=True)
+    nombre = db.Column(db.String(80), nullable=False)
+    apellido = db.Column(db.String(80), nullable=False)
+    correo = db.Column(db.String(120), unique=True, nullable=False)
+    clave = db.Column(db.String(120), nullable=False)
+
+    def __init__(self, nombre, apellido, correo, clave):
+        self.nombre = nombre
+        self.apellido = apellido
+        self.correo = correo
+        self.clave = clave
     
     def getidPrece(self):
-        return self.__idPrece
+        return self.id
     def getNombre(self):
-        return self.__nombre
+        return self.nombre
     def getApellidoPrece(self):
-        return self.__apellidoPrece
+        return self.apellido
     def getCorreo(self):
-        return self.__correo
+        return self.correo
     def getClave(self):
-        return self.__clave
+        return self.clave

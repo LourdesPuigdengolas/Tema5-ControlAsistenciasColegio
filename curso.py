@@ -1,17 +1,22 @@
+from run import db
 
-class Curso:
-    __idCurso: int
-    __anio: int
-    __division: str
+class Curso(db.Model):
+    id: int = db.Column(db.Integer, primary_key=True)
+    anio: int = db.Column(db.Integer, nullable=False)
+    division: str = db.Column(db.Integer, nullable=False)
+    idpreceptor: int = db.Column(db.Integer, nullable=False)
 
-    def __init__(self, idCurso, anio, division):
-        self.__idCurso = idCurso
-        self.__anio = anio
-        self.__division = division
+    def __init__(self, id, anio, division, idpreceptor):
+        self.id = id
+        self.anio = anio
+        self.division = division
+        self.idpreceptor = idpreceptor
     
-    def getIdCurso(self):
-        return self.__idCurso
+    def getId(self):
+        return self.id
     def getAnio(self):
-        return self.__anio
+        return self.anio
     def getDivision(self):
-        return self.__division
+        return self.division
+    def getIdPreceptor(self):    
+        return self.idpreceptor
