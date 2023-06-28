@@ -7,8 +7,9 @@ class Estudiante(db.Model):
     nombre: str = db.Column(db.String(80), nullable=False)
     apellido: str = db.Column(db.String(80), nullable=False)
     dni: str = db.Column(db.String(80), nullable=False)
-    idCurso: int = db.Column(db.Integer, nullable=False)
-    idPadre: int = db.Column(db.Integer, nullable=False)
+    idCurso: int = db.Column(db.Integer, db.ForeignKey('curso.id'), nullable=False)
+    idPadre: int = db.Column(db.Integer, db.ForeignKey('padre.id'), nullable=False)
+    asistencias = db.relationship('Asistencia', backref='estudiante', lazy=True)
 
     def __init__(self, id, nombre, apellido, dni, idCurso, idPadre):
         self.id = id
@@ -30,3 +31,5 @@ class Estudiante(db.Model):
         return self.idCurso
     def getIdPadre(self):
         return self.idPadre
+    def getAsistencias(self):
+        return self.asistencias

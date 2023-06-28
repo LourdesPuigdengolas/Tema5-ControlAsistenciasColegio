@@ -6,6 +6,7 @@ from preceptor import Preceptor
 from curso import Curso
 from estudiante import Estudiante
 from asistencia import Asistencia
+from padre import Padre
 
 #db = SQLAlchemy(app)
 

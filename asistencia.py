@@ -8,7 +8,7 @@ class Asistencia(db.Model):
     codigoclase: int = db.Column(db.Integer, nullable=False)
     asistio: bool = db.Column(db.Boolean, nullable=False)
     justificacion: str = db.Column(db.String(80), nullable=False)
-    idEstudiante: int = db.Column(db.Integer, nullable=False)
+    idEstudiante: int = db.Column(db.Integer, db.ForeignKey('estudiante.id'), nullable=False)
 
     def __init__(self, fecha, codigoClase, asistio, justificacion, idEstudiante):
         self.fecha = fecha
