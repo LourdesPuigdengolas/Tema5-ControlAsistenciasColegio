@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet " href="{{url_for('static', filename= 'style.css')}}">
+    <title>Preceptor</title>
+</head>
+
+<body>
+    <header>
+        <h1>Colegio San Miguel</h1>
+    </header>
+
+
+    <section>
+        <h2>Bienvenid@ preceptor/a</h2>
+    </section>
+    <!-- --------BOTONERA--------------- -->
+    <div id="botonera">
+        <nav class="botones">
+            <ul class="menu">
+                <li><a href="{{url_for('agregarAsistencia')}}"> <b>REGISTRAR ASISTENCIA</a></b></li>
+                <li><a href=""> <b>OBTENER INFORME DE ASISTENCIAS</a></b></li>
+                <li><a href=""><b>SALIR</a></b></li>
+            </ul>
+        </nav>
+    </div>
+    <h2>Seleccione un curso para registrar asistencia</h2>
+      <!-- --------TABLA CON LOS CURSOS--------------- -->
+    <table class="cursos">
+        <tr>
+            <th> "Curso1" </th>
+            <th> <select>
+                    <option value="1">Aula</option>
+                    <option value="2">Ed. Física</option>
+
+                </select>
+            </th>
+            <th><input type = "submit" value = "Fecha" /></th>
+            <th><input type = "submit" value = "Listar" /></th>
+        </tr>
+        <tr>
+            <tr>
+                <th>"Curso2" </th>
+                <th> <select>
+                        <option value="1">Aula</option>
+                        <option value="2">Ed. Física</option>
+    
+                    </select>
+                </th>
+                <th><input type = "submit" value = "Fecha" /></th>
+                <th><input type = "submit" value = "Listar" /></th>
+            </tr>
+        </tr>
+        <tr>
+            <tr>
+                <th>"Curso3" </th>
+                <th> <select>
+                        <option value="1">Aula</option>
+                        <option value="2">Ed. Física</option>
+                        </select>
+                </th>
+                <th><input type = "submit" value = "Fecha" /></th>
+                <th><input type = "submit" value = "Listar" /></th>
+            </tr>
+        </tr>
+        <tr>
+            <tr>
+                <th>"Curso4" </th>
+                <th> <select>
+                        <option value="1">Aula</option>
+                        <option value="2">Ed. Física</option>
+                    </select>
+                </th>
+                <th><input type = "submit" value = "Fecha" /></th>
+                <th><input type = "submit" value = "Listar" /></th>
+            </tr>
+        </tr>
+        <tr>
+            <tr>
+                <th>"Curso5" </th>
+                <th> <select>
+                        <option value="1">Aula</option>
+                        <option value="2">Ed. Física</option>
+                    </select>
+                </th>
+                <th><input type = "submit" value = "Fecha" /></th>
+                <th><input type = "submit" value = "Listar" /></th>
+            </tr>
+        </tr>
+        <tr>
+            <tr>
+                <th> "Curso6" </th>
+                <th> <select>
+                        <option value="1">Aula</option>
+                        <option value="2">Ed. Física</option>
+                      </select>
+                </th>
+                <th><input type = "submit" value = "Fecha" /></th>
+                <th><input type = "submit" value = "Listar" /></th>
+            </tr>
+        </tr>
+    </table>
+
+
+    <footer>
+        <p>Av. José Ignacio de la Roza 1804 - Tel.: (264) 4235702</p>
+    </footer>
+</body>
+
+</html>

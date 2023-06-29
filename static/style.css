@@ -29,6 +29,7 @@
 	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: left;
 	margin-left: 70px ;
+
 	}
 section{
 	background-color: #f1f1f1;
@@ -89,6 +90,15 @@ ul.menu li a{
     margin-right: 1px;
     margin-left: -35px;
     
+}
+.cursos{
+    width: 60%;
+    height: 45px;
+    margin: 1px;
+    background-color: #e4e1e1;
+    margin-top: -1px;
+    float: right;
+    margin-right: 10%;
 }
    footer {
     background-color: #3c2525;
