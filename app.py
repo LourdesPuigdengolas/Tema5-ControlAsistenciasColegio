@@ -9,7 +9,7 @@ from padre import Padre
 
 
 @app.route('/')
-def index():    
+def index():
     preceptor = Preceptor('Juan', 'Perez', 'juan@gmail.com', '1234')
     db.session.add(preceptor)
     db.session.commit()

@@ -1,4 +1,3 @@
-from run import db
 from preceptor import Preceptor
 import hashlib
 
@@ -26,5 +25,6 @@ class GestorLogin():
     def cipherPassword(self):
         # cifrado de la clave utilizando md5
         result = hashlib.md5(bytes(self.__password, encoding='utf-8'))
-        # muestra la clave cifrada en hexadecimal, esta es la que se guarda en base de datos
+        # muestra la clave cifrada en hexadecimal,
+        # esta es la que se guarda en base de datos
         return result.hexdigest()

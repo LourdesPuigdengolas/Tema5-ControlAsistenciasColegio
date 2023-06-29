@@ -29,81 +29,26 @@
     </div>
     <h2>Seleccione un curso para registrar asistencia</h2>
       <!-- --------TABLA CON LOS CURSOS--------------- -->
+    <form action="{{url_for('listarEstudiantesPorCurso')}}" method = "post">
     <table class="cursos">
         <tr>
-            <th> "Curso1" </th>
+            <th>
+                <select>
+                    {% for curso in cursos %}
+                        <option id="{{curso.id}}" value="1">Curso: {{curso.anio}} - {{curso.division}} </option>
+                    {% endfor %}
+                </select>
+            </th>
             <th> <select>
                     <option value="1">Aula</option>
                     <option value="2">Ed. Física</option>
-
                 </select>
             </th>
-            <th><input type = "submit" value = "Fecha" /></th>
+        
             <th><input type = "submit" value = "Listar" /></th>
         </tr>
-        <tr>
-            <tr>
-                <th>"Curso2" </th>
-                <th> <select>
-                        <option value="1">Aula</option>
-                        <option value="2">Ed. Física</option>
-    
-                    </select>
-                </th>
-                <th><input type = "submit" value = "Fecha" /></th>
-                <th><input type = "submit" value = "Listar" /></th>
-            </tr>
-        </tr>
-        <tr>
-            <tr>
-                <th>"Curso3" </th>
-                <th> <select>
-                        <option value="1">Aula</option>
-                        <option value="2">Ed. Física</option>
-                        </select>
-                </th>
-                <th><input type = "submit" value = "Fecha" /></th>
-                <th><input type = "submit" value = "Listar" /></th>
-            </tr>
-        </tr>
-        <tr>
-            <tr>
-                <th>"Curso4" </th>
-                <th> <select>
-                        <option value="1">Aula</option>
-                        <option value="2">Ed. Física</option>
-                    </select>
-                </th>
-                <th><input type = "submit" value = "Fecha" /></th>
-                <th><input type = "submit" value = "Listar" /></th>
-            </tr>
-        </tr>
-        <tr>
-            <tr>
-                <th>"Curso5" </th>
-                <th> <select>
-                        <option value="1">Aula</option>
-                        <option value="2">Ed. Física</option>
-                    </select>
-                </th>
-                <th><input type = "submit" value = "Fecha" /></th>
-                <th><input type = "submit" value = "Listar" /></th>
-            </tr>
-        </tr>
-        <tr>
-            <tr>
-                <th> "Curso6" </th>
-                <th> <select>
-                        <option value="1">Aula</option>
-                        <option value="2">Ed. Física</option>
-                      </select>
-                </th>
-                <th><input type = "submit" value = "Fecha" /></th>
-                <th><input type = "submit" value = "Listar" /></th>
-            </tr>
-        </tr>
     </table>
-
+    </form>
 
     <footer>
         <p>Av. José Ignacio de la Roza 1804 - Tel.: (264) 4235702</p>

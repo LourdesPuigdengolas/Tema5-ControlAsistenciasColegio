@@ -7,6 +7,8 @@ from curso import Curso
 from estudiante import Estudiante
 from asistencia import Asistencia
 from padre import Padre
+from gestorPreceptor import GestorPreceptor
+from gestorCurso import GestorCurso
 
 @app.route('/')
 def index():
@@ -17,13 +19,10 @@ def index():
 @app.route('/login', methods=['POST'])
 def login():
     if request.method == 'POST':
-        #db.session.query(Preceptor).filter(Preceptor.id==8).delete()
-        #db.session.commit()
-        #preceptor = Preceptor('Juan', 'Perez', 'fa_-_-_96@hotmail.com', '32164702f8ffd2b418d780ff02371e4c')
-        #db.session.add(preceptor)
-        #db.session.commit()
-
-        gestorLogin = GestorLogin(request.form['email'], request.form['password'])
+        gestorLogin = GestorLogin(
+            request.form['email'],
+            request.form['password']
+        )
         userId = gestorLogin.verifyUserAndGetId()
         if userId:
             session['id'] = userId
@@ -56,18 +55,27 @@ def listarAsistencias():
         asistencias = Asistencia.query.all()
         return render_template('listarAsistencias.html', asistencias=asistencias)'''
 
-@app.route('/listarCursoPorPreceptor', methods=['GET','POST'])
+@app.route('/listarCursoPorPreceptor', methods=['GET'])
 def listarCursoPorPreceptor():
     if request.method == 'GET':
-        #cursos = Curso.query.all()
-        return render_template('listaCursos.html')
+        gestorPreceptor = GestorPreceptor()
+        cursos = gestorPreceptor.getCursosByPreceptorId(session['id'])
+        return render_template('listaCursos.html', cursos=cursos)
+    
+    return redirect('/preceptor')
 
     
-@app.route('/listarEstudiantesPorCurso', methods=['GET','POST'])
+@app.route('/listarEstudiantesPorCurso', methods=['POST'])
 def listarEstudiantesPorCurso():
-    if request.method == 'GET':
-        estudiantes = Estudiante.query.all()
-        return render_template('listarEstudiantesPorCurso.html', estudiantes=estudiantes)
+    if request.method == 'POST':
+        gestorCurso = GestorCurso()
+        estudiantes = gestorCurso.getEstudiantesByCurso(
+            request.form['idCurso']
+            )
+        return render_template(
+            'listarEstudiantesPorCurso.html',
+            estudiantes=estudiantes
+            )
 
 @app.route('/agregarAsistencia', methods=['GET','POST'])
 def agregarAsistencia():
