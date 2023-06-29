@@ -1,17 +1,15 @@
 from flask import Flask, render_template
 from run import app, db
 
-#from preceptor import db
 from preceptor import Preceptor
 from curso import Curso
 from estudiante import Estudiante
 from asistencia import Asistencia
 from padre import Padre
 
-#db = SQLAlchemy(app)
 
 @app.route('/')
-def index():
+def index():    
     preceptor = Preceptor('Juan', 'Perez', 'juan@gmail.com', '1234')
     db.session.add(preceptor)
     db.session.commit()

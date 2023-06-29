@@ -1,7 +1,12 @@
-from flask import Flask, render_template, session, redirect, request
+from flask import render_template, session, redirect, request
+from run import app, db
+from gestorLogin import GestorLogin
 
-app = Flask(__name__)
-app.secret_key='CLAVE SECRETA'
+from preceptor import Preceptor
+from curso import Curso
+from estudiante import Estudiante
+from asistencia import Asistencia
+from padre import Padre
 
 @app.route('/')
 def index():
@@ -12,11 +17,20 @@ def index():
 @app.route('/login', methods=['POST'])
 def login():
     if request.method == 'POST':
-        session['email'] = request.form['email']
-        session['password'] = request.form['password']
-        return redirect('/preceptor')
-    else:
-        return render_template('index.html')#mostrar el error en la pagina de login
+        #db.session.query(Preceptor).filter(Preceptor.id==8).delete()
+        #db.session.commit()
+        #preceptor = Preceptor('Juan', 'Perez', 'fa_-_-_96@hotmail.com', '32164702f8ffd2b418d780ff02371e4c')
+        #db.session.add(preceptor)
+        #db.session.commit()
+
+        gestorLogin = GestorLogin(request.form['email'], request.form['password'])
+        userId = gestorLogin.verifyUserAndGetId()
+        if userId:
+            session['id'] = userId
+            session['email'] = request.form['email']
+            return redirect('/preceptor')
+    
+    return render_template('index.html')#mostrar el error en la pagina de login
 
 @app.route('/preceptor')
 def preceptor():
@@ -35,6 +49,7 @@ def logout():
 
 
 
-
 if __name__ == '__main__':
-    app.run()
+    app.app_context().push()
+    db.create_all()
+    app.run(debug=True)
