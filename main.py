@@ -2,17 +2,11 @@ from flask import render_template, session, redirect, request
 from run import app, db
 from gestorLogin import GestorLogin
 
-<<<<<<< HEAD
 from preceptor import Preceptor
 from curso import Curso
 from estudiante import Estudiante
 from asistencia import Asistencia
 from padre import Padre
-=======
-
-app = Flask(__name__)
-app.secret_key='CLAVE SECRETA'
->>>>>>> main
 
 @app.route('/')
 def index():
