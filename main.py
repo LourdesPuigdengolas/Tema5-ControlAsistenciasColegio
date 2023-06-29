@@ -19,7 +19,7 @@ def login():
     if request.method == 'POST':
         #db.session.query(Preceptor).filter(Preceptor.id==8).delete()
         #db.session.commit()
-        #preceptor = Preceptor('Juan', 'Perez', 'fa_-_-_96@hotmail.com', '32164702f8ffd2b418d780ff02371e4c')
+        #preceptor = Preceptor('Juan', 'Perez', 'juanti96@hotmail.com', '32164702f8ffd2b418d780ff02371e4c')
         #db.session.add(preceptor)
         #db.session.commit()
 
@@ -71,7 +71,7 @@ def listarEstudiantesPorCurso():
 
 @app.route('/agregarAsistencia', methods=['GET','POST'])
 def agregarAsistencia():
-    if request.method == 'GET':
+    if request.method == 'POST':
         idEstudiante = request.form['idEstudiante']
         fecha = request.form['fecha']
         estado = request.form['estado']

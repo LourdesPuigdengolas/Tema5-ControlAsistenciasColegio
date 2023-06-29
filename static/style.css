@@ -36,10 +36,11 @@ section{
 }
    form {
     padding-left: 90px;
-    width: 100%;
+    width: 90%;
     background-color: #f1f1f1;
     height: 270px;
 	font-size: 16px;
+    margin-left: 10%;
 
    } 
    #botonera{
@@ -64,6 +65,8 @@ section{
 #botones ul{
 	list-style-type: none;
 	}
+
+
 ul.menu li{
 	display: block;
 	position: relative; 
@@ -91,12 +94,22 @@ ul.menu li a{
     margin-left: -35px;
     
 }
+
 .cursos{
     width: 60%;
     height: 45px;
     margin: 1px;
     background-color: #e4e1e1;
     margin-top: -1px;
+    float: right;
+    margin-right: 10%;
+}
+.cursoSelect{
+    width: 60%;
+    height: 45px;
+    margin: 1px;
+    background-color: #e4e1e1;
+    margin-top: 20px;
     float: right;
     margin-right: 10%;
 }

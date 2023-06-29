@@ -27,29 +27,40 @@
             </ul>
         </nav>
     </div>
-    <h2>Seleccione un curso para registrar asistencia</h2>
+    <h2>Seleccione un alumno para registrar asistencia</h2>
       <!-- --------TABLA CON LOS CURSOS--------------- -->
-    <form action="{{url_for('listarEstudiantesPorCurso')}}">
-    <table class="cursos">
+    <form action="{{url_for('agregarAsistencia')}}">
+    <table class="cursoSelect">
         <tr>
-            <th> <select>
-                <option value="1">Curso1</option>
-                <option value="2">Curso2</option>
-                <option value="3">Curso3</option>
-                <option value="4">Curso4</option>
-
-            </select></th>
-            <th> <select>
-                    <option value="1">Aula</option>
-                    <option value="2">Ed. Física</option>
-
-                </select>
-            </th>
+            <th>Nombre</th>
+            <th>Asistencia</th>
+            <th>Clase</th>
+            <th>Justificación</th>
+          </tr>
         
-            <th><input type = "submit" value = "Listar" /></th>
-        </tr>
+          <tr>
+            <td>Name 1</td>
+            <td>s</td>
+            <td>codigo 1</td>
+            <td></td>
+          </tr>
+        
+          <tr>
+            <td>Name 1</td>
+            <td>s</td>
+            <td>codigo 1</td>
+            <td></td>
+          </tr>
+        
+          <tr>
+            <td>Name 1</td>
+            <td>s</td>
+            <td>codigo 1</td>
+            <td></td>
+          </tr>
+          <th><input type = "submit" value = "Guardar asistencia" /></th>
     </table>
-    </form>
+</form>
 
     <footer>
         <p>Av. José Ignacio de la Roza 1804 - Tel.: (264) 4235702</p>
